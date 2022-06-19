@@ -1,7 +1,3 @@
-from calendar import SATURDAY
-from dis import show_code
-from pkg_resources import working_set
-
 
 class Person:
     def __init__(self,name,gender,profession,study:int) -> None:
