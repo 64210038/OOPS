@@ -1,0 +1,49 @@
+from re import S
+
+
+class Coffee_order:
+    menu_type = "Coffee"
+    total = 0    
+
+    def __init__(self, menu:str, total:float, customer_name:str, num:int = 1, size:str = 'R', price:float = 0):
+        self.menu = menu
+        self.total = total
+        self.customer_name = customer_name
+        self.num = num
+        self.size = size
+        self.price = price
+
+    def check_menu(self):
+        self = self.menu()
+        if self == 'Cafe Mocha':
+            return self.menu("CM")
+        elif self == 'Cappuccino':
+            return self.menu("CP")
+        elif self == 'Americano':
+            return self.menu("AM")
+        elif self == 'Vanila Latetl':
+            return self.menu("VL")
+        elif self == 'Espresso':
+            return self.menu("ES")
+        else:
+            return
+
+    def compute_price(self):
+        self = self.size()
+        if self == 'L':
+            return self.price + 1
+        elif self == 'XL':
+            return self.price + 1.5
+        else:
+            return
+
+    def display_detail(self):
+        print(f"ราคา  : {self.customer_name}")
+        print(f"เมนู  : {self.menu}")
+        print(f"ขนาด  : {self.size}")
+        print(f"ราคา  : {self.price:.2f}")
+
+
+if __name__ == "__main__":
+    order =Coffee_order("Espresso", "john",  1, "XL")
+    order.display_detail()
