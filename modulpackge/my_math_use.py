@@ -1,5 +1,5 @@
 #วิธีที่1
-from my_match import sqrt,circle_area
+from my_math import sqrt,circle_area
 
 print(f'aqart of 5 = {sqrt(5)}')
 print(f'circle_area = {circle_area(2):,.2f}')
