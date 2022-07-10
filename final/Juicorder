@@ -1,46 +1,46 @@
-Class Juicorder
-    menu_type = "Juicorder"
-    Total = 0
+class JuiceOrder:
+    menu_type = "Juice"
+    total = 0    
 
-    def __init__(self,customer_name:str,menu:str,num = 1 ,size = 'R')
-        None :
-        
-        self.menu = menu.upper()
+    def __init__(self, menu:str, size:str = 'R', price:int = 0,num=1):
+        self.menu = menu
+        self.size = size
+        self.price = price
         self.num = num
-        self.size = size.upper()
-        self.price = 0 
 
-    def check.menu(self):
+    def check_menu(self):
         menu_dictionary = {
-            'AJ' : 25,
-            'OJ' : 25,
-            'PJ' : 30,
-            'WJ' : 30
+            'OJ':25.00,
+            'AJ':25.00,
+            'WJ':30.00,
+            'PJ':30.00,
         }
-
-        if self.menu in menu_dictionary
+        if self.menu in menu_dictionary:
             self.price = menu_dictionary.get(self.menu)
+
     def compute_price(self):
-        if self.size == 'L' :
-            self.price += 1
-            elif self.size == 'XL' :
-                self.price += 1.5
-            else : 
-                self.price
-    Juicorder.total = self.prie * Self.num
+        if self.size == 'R':
+            self.price += 0.00
+        elif self.size == 'L':
+            self.price += 5.00
+        else:
+            self.price
+        
+        JuiceOrder.total = self.price* self.num
+        
     def display_detail(self):
-        self.chack_menu()
+        self.check_menu()
         self.compute_price()
-        return f'{self.costomer_name},{self.menu},{self.num},{self.size} * {self.price} => {Juicorder.total}'
+        return f'{self.menu} {self.size} * {self.price}baht => {JuiceOrder.total}baht'
 
-    def __del__ (self):
-        print ("object was destroyed")
+    def __del__(self):
+        print("Object was destroyed")
 
-    if __name__ == " __main__ " :
-        order1 = juicorder ("order1","WJ",1,"L")
-        order2  = juicorder ("order2","OR",1,"R")
-        order3 = juicorder ("order3", "PJ", 1 "L")
-
-        print (order1.display_detail())
-        print (order2.display_detail())
-        print (order3.display_detail())
+if __name__ == "__main__":
+    order1 = JuiceOrder("WJ","L")
+    order2 = JuiceOrder("OJ","R")
+    order3 = JuiceOrder("PJ","L")
+    
+    print(order1.display_detail())
+    print(order2.display_detail())
+    print(order3.display_detail())
